@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SAAS</title>
+</head>
+<body>
+    
+    <nav class="sticky top-0 z-10 w-full mx-auto bg-slate-900 p-4 md:px-4 md:py-0 md:flex items-center justify-between text-white">
+        <div class="flex justify-between md:hidden items-center">
+            <a href="#">SAAS</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
