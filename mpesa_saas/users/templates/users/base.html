@@ -8,10 +8,14 @@
 </head>
 <body>
     
-    <nav class="sticky top-0 z-10 w-full mx-auto bg-slate-900 p-4 md:px-4 md:py-0 md:flex items-center justify-between text-white">
-        <div class="flex justify-between md:hidden items-center">
+    <nav class="sticky top-0 z-10 w-full h-[10vh] mx-auto bg-slate-900 p-4">
+        <div class="flex justify-between items-center text-white">
             <a href="#">SAAS</a>
-            <a href="{% url 'login' %}">Login</a>
+            <div class="flex gap-x-4">
+                <a href="{% url 'add_course' %}">CreateCourse</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+            
         </div>
     </nav>
 

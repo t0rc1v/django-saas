@@ -1,0 +1,24 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<ul role="list" class="container mx-auto mt-4 divide-y divide-gray-300">
+    {% for course in courses %}
+    <li class="flex justify-between gap-x-6 py-5">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm font-semibold leading-6 text-gray-900"> {{course.title}} </p>
+          <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{course.price}} KES</p>
+        </div>
+      </div>
+      <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+        {% if course.is_unlocked %}
+        <a class="text-sm leading-6 text-gray-900 bg-green-600 hover:bg-green-500 p-3 rounded-md" href="{% url 'course_detail' course.id %}">View Course</a>
+        {% else %}
+        <a class="text-sm leading-6 text-gray-900 bg-red-600 hover:bg-red-500 p-3 rounded-md" href="#">Buy Course</a>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
