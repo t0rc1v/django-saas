@@ -14,7 +14,7 @@
         {% if course.is_unlocked %}
         <a class="text-sm leading-6 text-gray-900 bg-green-600 hover:bg-green-500 p-3 rounded-md" href="{% url 'course_detail' course.id %}">View Course</a>
         {% else %}
-        <a class="text-sm leading-6 text-gray-900 bg-red-600 hover:bg-red-500 p-3 rounded-md" href="#">Buy Course</a>
+        <a class="text-sm leading-6 text-gray-900 bg-red-600 hover:bg-red-500 p-3 rounded-md" href="{% url 'create_checkout_session' course.id %}">Buy Course</a>
         {% endif %}
       </div>
     </li>

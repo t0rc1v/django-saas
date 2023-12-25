@@ -8,18 +8,24 @@
 </head>
 <body>
     
-    <nav class="sticky top-0 z-10 w-full h-[10vh] mx-auto bg-slate-900 p-4">
+    <nav class="sticky top-0 z-99 w-full h-[10vh] mx-auto bg-slate-900 p-4">
         <div class="flex justify-between items-center text-white">
             <a href="#">SAAS</a>
             <div class="flex gap-x-4">
                 <a href="{% url 'add_course' %}">CreateCourse</a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
                 <a href="{% url 'login' %}">Login</a>
+                {% endif %}
             </div>
             
         </div>
     </nav>
 
+    <div class="container mx-auto mt-4">
     {% block content %}
     {% endblock %}
+    </div>
 </body>
 </html>
